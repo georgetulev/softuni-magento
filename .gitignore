@@ -22,3 +22,5 @@
 /sitemap.xml
 
 /vendor/*
+
+.idea/*
