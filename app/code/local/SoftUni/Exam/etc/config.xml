@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE config>
+
+<config>
+    <modules>
+        <SoftUni_Exam>
+            <version>0.0.0</version>
+        </SoftUni_Exam>
+    </modules>
+    <global>
+        <models>
+            <exam>
+                <class>SoftUni_Exam_Model</class>
+            </exam>
+        </models>
+        <blocks>
+            <exam>
+                <class>SoftUni_Exam_Block</class>
+            </exam>
+        </blocks>
+        <helpers>
+            <exam>
+                <class>SoftUni_Exam_Helper</class>
+            </exam>
+        </helpers>
+    </global>
+</config>
