@@ -24,6 +24,17 @@
             </exam>
         </helpers>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <exam before="Mage_Adminhtml">SoftUni_Exam_Adminhtml</exam>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
     <frontend>
         <routers>
             <exam>
