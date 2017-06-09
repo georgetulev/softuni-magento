@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE layout>
+
+<layout version="0.1.0">
+    <exam_index_index>
+        <update handle="page_two_columns_right" />
+
+        <reference name="content">
+            <block type="exam/contests" />
+        </reference>
+    </exam_index_index>
+</layout>

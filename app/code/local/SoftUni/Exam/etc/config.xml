@@ -34,5 +34,12 @@
                 </args>
             </exam>
         </routers>
+        <layout>
+            <updates>
+                <exam>
+                    <file>exam.xml</file>
+                </exam>
+            </updates>
+        </layout>
     </frontend>
 </config>
