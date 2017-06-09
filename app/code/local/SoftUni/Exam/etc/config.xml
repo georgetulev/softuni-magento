@@ -24,4 +24,15 @@
             </exam>
         </helpers>
     </global>
+    <frontend>
+        <routers>
+            <exam>
+                <use>standard</use>
+                <args>
+                    <frontName>exam</frontName>
+                    <module>SoftUni_Exam</module>
+                </args>
+            </exam>
+        </routers>
+    </frontend>
 </config>
