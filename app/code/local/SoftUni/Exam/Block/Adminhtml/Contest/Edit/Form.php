@@ -3,6 +3,20 @@
 class SoftUni_Exam_Block_Adminhtml_Contest_Edit_Form extends
     Mage_Adminhtml_Block_Widget_Form
 {
+    protected function _initFormValues()
+    {
+        // edit existing contests
+        if($contest = Mage::registry('current_contest')) {
+            $data = $contest->getData();
+            $this->getForm()->setValues($data);
+        }
+
+        // keep data if post has failed
+        if($data = Mage::getSingleton('adminhtml/session')->getData('contest_form_data', true)){
+            $this->getForm()->setValues($data);
+        }
+    }
+
     public function _prepareForm()
     {
         $form = new Varien_Data_Form(

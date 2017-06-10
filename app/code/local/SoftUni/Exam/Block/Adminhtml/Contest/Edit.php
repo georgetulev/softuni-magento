@@ -19,6 +19,6 @@ class SoftUni_Exam_Block_Adminhtml_Contest_Edit extends
 
     public function getSaveUrl()
     {
-        return $this->getUrl('*/contest/save');
+        return $this->getUrl('*/contest/save', array('_current' => true));
     }
 }
