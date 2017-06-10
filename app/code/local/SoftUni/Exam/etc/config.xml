@@ -9,10 +9,30 @@
     </modules>
     <global>
         <models>
-            <exam>
+            <softuni_exam>
                 <class>SoftUni_Exam_Model</class>
-            </exam>
+                <resourceModel>softuni_exam_resource</resourceModel>
+            </softuni_exam>
+            <softuni_exam_resource>
+                <class>SoftUni_Exam_Model_Resource</class>
+                <entities>
+                    <contest>
+                        <table>exam_contest</table>
+                    </contest>
+                    <contestant>
+                        <table>exam_contestant</table>
+                    </contestant>
+                </entities>
+            </softuni_exam_resource>
         </models>
+        <resources>
+            <exam_setup>
+                <setup>
+                    <module>SoftUni_Exam</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </exam_setup>
+        </resources>
         <blocks>
             <exam>
                 <class>SoftUni_Exam_Block</class>

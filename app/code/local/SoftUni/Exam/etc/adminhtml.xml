@@ -6,7 +6,7 @@
         <exam translate="title" module="exam">
             <title>Contests</title>
             <sort_order>1000</sort_order>
-            <action>adminhtml/contests</action>
+            <action>adminhtml/contest</action>
         </exam>
     </menu>
 </config>
