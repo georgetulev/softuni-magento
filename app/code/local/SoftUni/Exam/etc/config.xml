@@ -56,6 +56,16 @@
         </routers>
     </admin>
     <frontend>
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <softuni_exam>
+                        <class>softuni_exam/observer</class>
+                        <method>addItemToTopMenu</method>
+                    </softuni_exam>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
         <routers>
             <exam>
                 <use>standard</use>
