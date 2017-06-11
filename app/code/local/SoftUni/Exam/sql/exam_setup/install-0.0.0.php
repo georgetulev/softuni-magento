@@ -30,4 +30,63 @@ $table = $installer->getConnection()->newTable($installer->getTable('exam_contes
 
 $installer->getConnection()->createTable($table);
 
+$contestantTable = $installer->getConnection()->newTable($installer->getTable('exam_contestant'))
+    ->addColumn('contestant_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        'unsigned' => true,
+        'nullable' => false,
+        'primary' => true,
+        'identity' => true,
+    ), 'Contestant ID')
+    ->addColumn('contest_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        'unsigned' => true,
+        'nullable' => false,
+    ), 'Contestant ID')
+    ->addColumn('approved', Varien_Db_Ddl_Table::TYPE_BOOLEAN, 0, array(
+        'nullable' => false,
+        'default' => 0,
+    ), 'Status')
+    ->addColumn('first_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        'nullable' => false
+    ), 'First Name')
+    ->addColumn('email', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        'nullable' => false
+    ), 'Mail')
+    ->addColumn('last_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        'nullable' => false
+    ), 'Last Name')
+    ->addColumn('message', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+        'nullable' => true
+    ), 'Message')
+    ->addColumn('country', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        'nullable' => true
+    ), 'Country')
+    ->addColumn('city', Varien_Db_Ddl_Table::TYPE_VARCHAR, null, array(
+        'nullable' => true
+    ), 'City')
+    ->addColumn('dob', Varien_Db_Ddl_Table::TYPE_DATE, null, array(
+        'nullable' => true
+    ), 'Date Of Birth')
+    ->addColumn('created_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+    ), 'Created At')
+    ->addColumn('updated_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+    ), 'Updated At');
+
+$installer->getConnection()->createTable($contestantTable);
+
 $installer->endSetup();
+
+//->addForeignKey(
+//    $installer->getFkName('namespace_module/shop', 'area_id', 'namespace_module/area','area_id'),
+//    'area_id',
+//    $installer->getTable('namespace_module/area'),
+//    'area_id',
+//    Varien_Db_Ddl_Table::ACTION_CASCADE,
+//    Varien_Db_Ddl_Table::ACTION_CASCADE
+//)
+//
+//->addIndex($installer->getIdxName(
+//SOME_TABLE_NAME_DEFINITION,
+// array(‘my_unique_column_name’),
+// Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE), “my_unique_column_name”,
+//array(“type” => Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE));
+//$installer->getConnection()->createTable($table);

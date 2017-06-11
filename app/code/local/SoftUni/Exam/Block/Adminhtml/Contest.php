@@ -1,6 +1,6 @@
 <?php
 
-class SOftUni_Exam_Block_Adminhtml_Contest extends
+class SoftUni_Exam_Block_Adminhtml_Contest extends
     Mage_Adminhtml_Block_Widget_Grid_Container
 {
     public function __construct()

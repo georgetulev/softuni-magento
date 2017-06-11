@@ -55,4 +55,51 @@ class SoftUni_Exam_Block_Adminhtml_Contest_Grid extends
 
         return $this;
     }
+
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('contest_id');
+        $this->getMassactionBlock()->setFormFieldName('contest_ids');
+
+        $this->getMassactionBlock()->addItem('delete_event',
+            array(
+                'label'   => Mage::helper('exam')->__('Delete'),
+                'url'     => $this->getUrl('*/*/massDelete'),
+                'confirm' => Mage::helper('exam')->__('Sure?'),
+            )
+        );
+
+        $this->getMassactionBlock()->addItem('activate_event',
+            array(
+                'label'   => Mage::helper('exam')->__('Activate'),
+                'url'     => $this->getUrl('*/*/massStatusToggle?status=1'),
+            )
+        );
+
+        $this->getMassactionBlock()->addItem('deactivate_event',
+            array(
+                'label'   => Mage::helper('exam')->__('Deactivate'),
+                'url'     => $this->getUrl('*/*/massStatusToggle?status=0'),
+            )
+        );
+
+        return $this;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,10 +3,22 @@
 
 <config>
     <menu>
-        <exam translate="title" module="exam">
-            <title>Contests</title>
+        <storeinfo module="exam">
+            <title>ContestsInfo</title>
             <sort_order>1000</sort_order>
-            <action>adminhtml/contest</action>
-        </exam>
+            <children>
+                <items module="exam">
+                    <title>Contests</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/contest</action>
+                </items>
+                <items1 module="exam">
+                    <title>Contestants</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/contestant</action>
+                </items1>
+            </children>
+        </storeinfo>
     </menu>
 </config>
+

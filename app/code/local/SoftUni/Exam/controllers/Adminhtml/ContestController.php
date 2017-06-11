@@ -71,4 +71,55 @@ class SoftUni_Exam_Adminhtml_ContestController extends Mage_Adminhtml_Controller
 
         $this->_redirect('*/*/index');
     }
+
+    public function massDeleteAction()
+    {
+        if ($contestIds = $this->getRequest()->getParam('contest_ids')) {
+            try {
+                foreach ($contestIds as $contestId) {
+                    $model = Mage::getMOdel('softuni_exam/contest')->load($contestId);
+                    $model->delete();
+                }
+                Mage::getSingleton('adminhtml/session')
+                    ->addSuccess($this->__("%d contest(s) deleted!", count($contestIds)));
+            } catch ( Exception $e ) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        } else {
+            Mage::getSingleton('adminhtml/session')
+                ->addError($this->__('Please select some contests.')
+            );
+        }
+
+        $this->_redirect('*/*/index');
+    }
+
+    public function massStatusToggleAction()
+    {
+        $status = $this->getRequest()->getParam('status');
+        $this->toggleActivation($status);
+        $this->_redirect('*/*/index');
+    }
+
+    protected function toggleActivation($status)
+    {
+        if ($contestIds = $this->getRequest()->getParam('contest_ids')) {
+
+            try {
+                foreach ($contestIds as $contestId) {
+                    $model = Mage::getMOdel('softuni_exam/contest')->load($contestId);
+                    $model->setData('is_active', $status);
+                    $model->save();
+                }
+                Mage::getSingleton('adminhtml/session')
+                    ->addSuccess($this->__("%d contest(s) status changed!", count($contestIds)));
+            } catch ( Exception $e ) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        } else {
+            Mage::getSingleton('adminhtml/session')
+                ->addError($this->__('Please select some contests.')
+                );
+        }
+    }
 }
