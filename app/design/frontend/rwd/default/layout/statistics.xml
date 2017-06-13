@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE layout>
+
+<layout version="0.0.0">
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>new_statistics_section</name>
+                <path>statistics/index/index</path>
+                <label>New Account Statistics Section</label>
+            </action>
+        </reference>
+    </customer_account>
+</layout>

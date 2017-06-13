@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE config>
+
+<config>
+    <modules>
+        <SoftUni_Statistics>
+            <version>0.0.0</version>
+        </SoftUni_Statistics>
+    </modules>
+    <global>
+        <models>
+            <statistics>
+                <class>SoftUni_Statistics_Model</class>
+            </statistics>
+        </models>
+        <blocks>
+            <statistics>
+                <class>SoftUni_Statistics_Block</class>
+            </statistics>
+        </blocks>
+        <helpers>
+            <statistics>
+                <class>SoftUni_Statistics_Helper</class>
+            </statistics>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <statistics>
+                <use>standard</use>
+                <args>
+                    <frontName>statistics</frontName>
+                    <module>SoftUni_Statistics</module>
+                </args>
+            </statistics>
+        </routers>
+        <layout>
+            <updates>
+                <statistics module="SoftUni_Statistics">
+                    <file>statistics.xml</file>
+                </statistics>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE config>
+
+<config>
+    <modules>
+        <SoftUni_Statistics>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends />
+        </SoftUni_Statistics>
+    </modules>
+</config>
