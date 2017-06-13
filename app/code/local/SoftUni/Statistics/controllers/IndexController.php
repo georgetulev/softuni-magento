@@ -4,6 +4,12 @@ class SoftUni_Statistics_IndexController extends Mage_Core_Controller_Front_Acti
 {
     public function indexAction()
     {
+        $frontPageStatus = Mage::getStoreConfig('web/statistics/options');
+
+        if( 1 != $frontPageStatus ) {
+            return $this->_redirectReferer();
+        }
+
         $totalOrders = Mage::getModel('sales/order')->getCollection()->getSize();
 
         $completedOrders = Mage::getModel('sales/order')
