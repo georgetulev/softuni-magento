@@ -1,10 +1,28 @@
-<h1>opaala!</h1>
+<h1>Magento Orders Statistics</h1>
 
 <div class="dashboard">
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <div class="box-account box-info">
         <div class="box-head">
             <h2><?php echo $this->__('Account Statistics Section') ?></h2>
+        </div>
+    </div>
+    <div class="col2-set">
+        <div class="col1">
+            <div class="box">
+                <div class="box-title">
+                    <h3>Orders and products in Magento</h3>
+                </div>
+                <div class="box-content">
+                    <p>with state Completed : <?php echo Mage::getSingleton('core/session')->getCompletedOrders() ?></p>
+                    <br>
+                    <p>Others : <?php echo Mage::getSingleton('core/session')->getDiffThanCompleted() ?></p>
+                    <br>
+                    <p>All active products : <?php echo Mage::getSingleton('core/session')->getActiveProducts() ?></p>
+                    <br>
+                    <br>
+                </div>
+            </div>
         </div>
     </div>
 </div>

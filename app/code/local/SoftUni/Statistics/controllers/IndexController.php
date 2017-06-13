@@ -10,8 +10,6 @@ class SoftUni_Statistics_IndexController extends Mage_Core_Controller_Front_Acti
             return $this->_redirectReferer();
         }
 
-        $totalOrders = Mage::getModel('sales/order')->getCollection()->getSize();
-
         $completedOrders = Mage::getModel('sales/order')
             ->getCollection()
             ->addFieldToFilter('state',
@@ -35,9 +33,11 @@ class SoftUni_Statistics_IndexController extends Mage_Core_Controller_Front_Acti
             ->addAttributeToFilter('status', 1)
             ->getSize();
 
+        Mage::getSingleton('core/session')->setCompletedOrders($completedOrders);
+        Mage::getSingleton('core/session')->setDiffThanCompleted($diffThanCompleted);
+        Mage::getSingleton('core/session')->setActiveProducts($activeProducts);
+
         $this->loadLayout();
         return $this->renderLayout();
-
-
     }
 }
