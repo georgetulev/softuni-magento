@@ -11,4 +11,14 @@
             </action>
         </reference>
     </customer_account>
+    <statistics_index_index>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+
+            <block type="core/template"
+                   name="softuni_statistics_content"
+                   template="statistics/content.phtml"/>
+
+        </reference>
+    </statistics_index_index>
 </layout>
