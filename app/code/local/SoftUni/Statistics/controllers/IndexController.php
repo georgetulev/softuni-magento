@@ -4,8 +4,34 @@ class SoftUni_Statistics_IndexController extends Mage_Core_Controller_Front_Acti
 {
     public function indexAction()
     {
-        $this->loadLayout();
+        $totalOrders = Mage::getModel('sales/order')->getCollection()->getSize();
 
+        $completedOrders = Mage::getModel('sales/order')
+            ->getCollection()
+            ->addFieldToFilter('state',
+                array(
+                    array('eq' => Mage_Sales_Model_Order::STATE_COMPLETE),
+                )
+            )
+            ->getSize();
+
+        $diffThanCompleted = Mage::getModel('sales/order')
+            ->getCollection()
+            ->addFieldToFilter('state',
+                array(
+                    array('neq' => Mage_Sales_Model_Order::STATE_COMPLETE),
+                )
+            )
+            ->getSize();
+
+        $activeProducts = Mage::getModel('catalog/product')
+            ->getCollection()
+            ->addAttributeToFilter('status', 1)
+            ->getSize();
+
+        $this->loadLayout();
         return $this->renderLayout();
+
+
     }
 }

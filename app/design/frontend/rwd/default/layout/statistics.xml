@@ -5,20 +5,17 @@
     <customer_account>
         <reference name="customer_account_navigation">
             <action method="addLink">
-                <name>new_statistics_section</name>
+                <name>our_new_section</name>
                 <path>statistics/index/index</path>
-                <label>New Account Statistics Section</label>
+                <label>Statistic Section</label>
             </action>
         </reference>
     </customer_account>
     <statistics_index_index>
         <update handle="customer_account" />
         <reference name="my.account.wrapper">
-
-            <block type="core/template"
-                   name="softuni_statistics_content"
-                   template="statistics/content.phtml"/>
-
+            <block type="core/template" name="statistics_content" template="statistics/content.phtml"/>
         </reference>
+
     </statistics_index_index>
 </layout>
