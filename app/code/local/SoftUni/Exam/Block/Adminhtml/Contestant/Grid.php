@@ -26,16 +26,60 @@ class SoftUni_Exam_Block_Adminhtml_Contestant_Grid extends
             )
         );
 
+        $this->addColumn('LastName',
+            array(
+                'type' => 'text',
+                'index' => 'last_name',
+                'header' => $this->__('Last Name')
+            )
+        );
+        $this->addColumn('Country',
+            array(
+                'type' => 'text',
+                'index' => 'country',
+                'header' => $this->__('Country')
+            )
+        );
+        $this->addColumn('City',
+            array(
+                'type' => 'text',
+                'index' => 'city',
+                'header' => $this->__('Name')
+            )
+        );
+
+        $this->addColumn('Mail',
+            array(
+                'type' => 'text',
+                'index' => 'email',
+                'header' => $this->__('Mail')
+            )
+        );
+
         $this->addColumn('approved',
             array(
-                'header' => $this->__('Status'),
+                'header' => $this->__('Approved'),
                 'type'=>'options',
-                'options' => array('1' => 'yes', '0' => 'no'),
+                'options' => array('0' => 'NOT YET', '1' => 'YES' ),
                 'index' => 'approved',
                 'width' => '80px',
                 'align' => 'left'
             )
         );
+
+        return $this;
+    }
+
+    public function _prepareMassaction()
+    {
+        $this->setMassactionIdField('contestant_id');
+        $this->getMassactionBlock()->setFormFieldName('contestant_ids');
+
+        $this->getMassactionBlock()->addItem('delete_event', array(
+            'label' => Mage::helper('exam')->__('Delete'),
+            'url' => $this->getUrl('*/*/massDelete'),
+            'confirm' => Mage::helper('exam')->__('R U Sure?')
+        ));
 
         return $this;
     }

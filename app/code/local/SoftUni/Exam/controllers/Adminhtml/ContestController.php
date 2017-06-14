@@ -41,6 +41,7 @@ class SoftUni_Exam_Adminhtml_ContestController extends Mage_Adminhtml_Controller
         $contestModel = Mage::getModel('softuni_exam/contest')->load($contestId);
 
         if ($data = $this->getRequest()->getPost()) {
+
             try {
                 $contestModel->addData($data)->save();
                 Mage::getSingleton('adminhtml/session')

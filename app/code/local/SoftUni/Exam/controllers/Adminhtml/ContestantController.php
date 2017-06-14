@@ -71,4 +71,26 @@ class SoftUni_Exam_Adminhtml_ContestantController extends Mage_Adminhtml_Control
 
         $this->_redirect('*/*/index');
     }
+
+    public function massDeleteAction()
+    {
+        if ($contestantIds = $this->getRequest()->getParam('contestant_ids')) {
+            try {
+                foreach ($contestantIds as $contestantId) {
+                    $model = Mage::getMOdel('softuni_exam/contestant')->load($contestantId);
+                    $model->delete();
+                }
+                Mage::getSingleton('adminhtml/session')
+                    ->addSuccess($this->__("%d contestant(s) deleted!", count($contestantIds)));
+            } catch ( Exception $e ) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        } else {
+            Mage::getSingleton('adminhtml/session')
+                ->addError($this->__('Please select some contestant(s).')
+                );
+        }
+
+        $this->_redirect('*/*/index');
+    }
 }

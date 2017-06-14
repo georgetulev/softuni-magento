@@ -75,18 +75,3 @@ $installer->getConnection()->createTable($contestantTable);
 
 $installer->endSetup();
 
-//->addForeignKey(
-//    $installer->getFkName('namespace_module/shop', 'area_id', 'namespace_module/area','area_id'),
-//    'area_id',
-//    $installer->getTable('namespace_module/area'),
-//    'area_id',
-//    Varien_Db_Ddl_Table::ACTION_CASCADE,
-//    Varien_Db_Ddl_Table::ACTION_CASCADE
-//)
-//
-//->addIndex($installer->getIdxName(
-//SOME_TABLE_NAME_DEFINITION,
-// array(‘my_unique_column_name’),
-// Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE), “my_unique_column_name”,
-//array(“type” => Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE));
-//$installer->getConnection()->createTable($table);

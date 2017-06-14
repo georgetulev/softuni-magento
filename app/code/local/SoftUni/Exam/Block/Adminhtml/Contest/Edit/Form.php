@@ -41,12 +41,12 @@ class SoftUni_Exam_Block_Adminhtml_Contest_Edit_Form extends
             'required' => false
         ));
 
-        $fieldset->addField('status', 'select', array(
+        $fieldset->addField('is_active', 'select', array(
             'name' => 'is_active',
             'label' => Mage::helper('exam')->__('Status'),
             'title' => Mage::helper('exam')->__('Status'),
             'required' => false,
-            'values'    => ['active', 'inactive'],
+            'values'    => ['inactive', 'active'],
         ));
 
         $dateFormatIso = Mage::app()

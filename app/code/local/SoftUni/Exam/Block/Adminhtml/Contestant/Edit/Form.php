@@ -73,7 +73,7 @@ class SoftUni_Exam_Block_Adminhtml_Contestant_Edit_Form extends
             'label' => Mage::helper('exam')->__('Status'),
             'title' => Mage::helper('exam')->__('Status'),
             'required' => false,
-            'values'    => ['approved', 'rejected'],
+            'values'    => ['rejected', 'approved'],
         ));
 
         $dateFormatIso = Mage::app()

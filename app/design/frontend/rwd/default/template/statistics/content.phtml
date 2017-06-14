@@ -14,11 +14,11 @@
                     <h3>Orders and products in Magento</h3>
                 </div>
                 <div class="box-content">
-                    <p>with state Completed : <?php echo Mage::getSingleton('core/session')->getCompletedOrders() ?></p>
+                    <p>with state Completed : <?php echo Mage::getSingleton('customer/session')->getCompletedOrders() ?></p>
                     <br>
-                    <p>Others : <?php echo Mage::getSingleton('core/session')->getDiffThanCompleted() ?></p>
+                    <p>Others : <?php echo Mage::getSingleton('customer/session')->getDiffThanCompleted() ?></p>
                     <br>
-                    <p>All active products : <?php echo Mage::getSingleton('core/session')->getActiveProducts() ?></p>
+                    <p>All active products : <?php echo Mage::getSingleton('customer/session')->getActiveProducts() ?></p>
                     <br>
                     <br>
                 </div>
