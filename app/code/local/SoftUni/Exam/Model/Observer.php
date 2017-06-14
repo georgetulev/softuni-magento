@@ -28,7 +28,7 @@ class SoftUni_Exam_Model_Observer
             $data = array(
                 'name' => $value['title'],
                 'id' => 'category-node-' . $value->id,
-                'url' => '/exam/contests/index?id=' . $value['contest_id'],
+                'url' => '/exam/contests/show?id=' . $value['contest_id'],
             );
 
             $subNode = new Varien_Data_Tree_Node($data, 'id', $tree, $node);

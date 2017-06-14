@@ -1,0 +1,68 @@
+<div class="page-title">
+    <h1><?php echo $this->__('Contest Name') ?></h1>
+</div>
+
+<div class="page-title">
+    <h5><?php echo $this->__('Contest Description') ?></h5>
+</div>
+<!-- --><?php //echo $this->getActionOfForm()?>
+<!--Form Information--> //
+<form id="person-form-validate" method="post" action="<?php echo '/exam/contests/post?' . 'id=2' ?>">
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->__('Contestant Application Form')?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="customer-name">
+                    <div class="field firstn_ame">
+                        <label class="required" for="first_name"><em>*</em><?php echo $this->__('First Name')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Name" value="" name="first_name" id="first_name">
+                        </div>
+                    </div>
+                    <div class="field last_name">
+                        <label class="required" for="last_name"><em>*</em><?php echo $this->__('Last Name')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Name" value="" name="last_name" id="last_name">
+                        </div>
+                    </div>
+                    <div class="field email">
+                        <label class="required" for="mail"><em>*</em><?php echo $this->__('Email')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Email" value="" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="field dob">
+                        <label class="required" for="dob"><em>*</em><?php echo $this->__('Date Of Birth')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Birthday" value="" name="dob" id="dob">
+                        </div>
+                    </div>
+                    <div class="field country">
+                        <label class="required" for="country"><em>*</em><?php echo $this->__('Country')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Country" value="" name="country" id="country">
+                        </div>
+                    </div>
+                    <div class="field city">
+                        <label class="required" for="city"><em>*</em><?php echo $this->__('City')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="City" value="" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="field message">
+                        <label class="required" for="dob"><em>*</em><?php echo $this->__('Message')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Message" value="" name="message" id="message">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--Button & Link-->
+    <div class="buttons-set">
+        <p class="required">* <?php echo $this->__('Required Fields')?></p>
+        <p class="back-link"><a class="back-link" href="<?php echo $this->getBaseUrl();?>"><small>&laquo;</small>Back</a></p>
+        <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
+    </div>
+</form>
