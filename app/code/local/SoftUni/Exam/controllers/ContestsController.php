@@ -49,7 +49,6 @@ class SoftUni_Exam_ContestsController extends Mage_Core_Controller_Front_Action
         $newModel = Mage::getModel('softuni_exam/contestant');
         $newModel->setData($data);
         $newModel->setData('contest_id', $contestId);
-        $newModel->setData('contestant_id', $customerId);
         $newModel->setData('approved', 0);
         $newModel->save();
 
